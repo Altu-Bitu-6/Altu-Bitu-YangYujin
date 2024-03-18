@@ -16,7 +16,7 @@ bool posCheck(pair<int, int>& pos) {
     }
 }
 
-void moveKing(pair<int, int>& pos, string cmd) {
+void move(pair<int, int>& pos, string cmd) {
 
     if (cmd == "R") {
         pos.first += 1;
@@ -73,9 +73,9 @@ int main() {
         pair<int, int> tmp = pos;
         pair<int, int> tmp2 = pos2;
 
-        moveKing(pos, cmd);
+        move(pos, cmd);
         if (pos == pos2) {
-            moveKing(pos2, cmd);
+            move(pos2, cmd);
         }
 
 
