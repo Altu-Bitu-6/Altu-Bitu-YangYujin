@@ -3,15 +3,7 @@
 
 using namespace std;
 
-struct cmp {
-    bool operator()(int x, int y) {
-        return x > y;
-    }
-};
-
-
-
-void pushToQueue(int n, priority_queue<int, vector<int>, cmp>& pq) {
+void pushToQueue(int n, priority_queue<int, vector<int>, greater<int>>& pq) {
     int num;
     for (int i = 0; i < n * n; i++) {
         cin >> num;
@@ -28,7 +20,7 @@ int main() {
     cin.tie(NULL); cout.tie(NULL);
 
     int n;
-    priority_queue<int, vector<int>, cmp> pq;
+    priority_queue<int, vector<int>, greater<int>> pq;
 
     cin >> n;
 

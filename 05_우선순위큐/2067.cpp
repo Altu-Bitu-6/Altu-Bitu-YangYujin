@@ -14,14 +14,12 @@ void strToVec(string str, vector<int>& v) {
 
 }
 
-int similarWord(vector<int>& v, int len, int n) {
-    string str;
+int similarWord(vector<int>& v, int len, int n, string str) {
     int cnt = 0;
 
     for (int i = 0; i < n; i++) {
         vector<int> v_comp(26);
         vector<int> dif;
-        cin >> str;
 
         strToVec(str, v_comp);
         
@@ -53,15 +51,14 @@ int similarWord(vector<int>& v, int len, int n) {
 int main() {
     vector<int> v(26);
     int n;
-    string str;
+    string str, str_comp;
     cin >> n;
     
     cin >> str;
     strToVec(str, v);
 
-
-
-    cout<<similarWord(v, str.length(), n-1);
+    cin>>str_comp;
+    cout<<similarWord(v, str.length(), n-1, str_comp);
 
     return 0;
 }
