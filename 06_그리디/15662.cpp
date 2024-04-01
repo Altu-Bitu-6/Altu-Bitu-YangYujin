@@ -8,21 +8,21 @@ using namespace std;
 void setGear(vector<string>& gear, int num, int dir, int t, vector<int>& index) {
     
     index[num - 1] = dir;
-    for (int i = num; i < t; i++) {
-        if (gear[i-1][2] != gear[i][6]) {
+    for (int i = num; i < t; i++) { //오른쪽 톱니바퀴들과 극 확인
+        if (gear[i-1][2] != gear[i][6]) { //극이 다르다면 index 배열에 방향 저장
             index[i] = index[i-1]*-1;
         }
-        else {
+        else { //극이 같다면 그 이후로는 더이상 회전하지 않으므로 break
             break;
         }
     }
 
-    for (int i = num-2; i >= 0; i--) {
+    for (int i = num-2; i >= 0; i--) { //외쪽 톱니바퀴들과 극 확인
         if (gear[i+1][6] != gear[i][2]) {
-            index[i] = index[i+1] * -1;
+            index[i] = index[i+1] * -1; 
         }
         else {
-            break;
+            break; 
         }
     }
 }
