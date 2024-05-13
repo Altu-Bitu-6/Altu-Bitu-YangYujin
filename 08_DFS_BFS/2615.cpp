@@ -3,10 +3,11 @@
 
 using namespace std;
 
+const int SIZE = 19;
 int back_x, back_y;
 
 bool inBoard(int x, int y){
-    if(x>=0 && x<19 && y>=0 && y<19){
+    if(x>=0 && x<SIZE && y>=0 && y<SIZE){
         return true;
     }
     else{
@@ -63,16 +64,16 @@ bool findFive(int x, int y, vector<vector<int>>& set){
 
 int main(){
     
-    vector<vector<int>> set(19, vector<int>(19,0));
+    vector<vector<int>> set(SIZE, vector<int>(SIZE,0));
     
-    for(int i=0; i<19; i++){
-        for(int j=0; j<19; j++){
+    for(int i=0; i<SIZE; i++){
+        for(int j=0; j<SIZE; j++){
             cin>>set[i][j];
         }
     }
     
-    for(int i=0; i<19; i++){
-        for(int j=0; j<19; j++){
+    for(int i=0; i<SIZE; i++){
+        for(int j=0; j<SIZE; j++){
             if(findFive(i, j, set)){
                 cout<<set[i][j]<<endl;
                 cout<<back_x+1<<" "<<back_y+1;
